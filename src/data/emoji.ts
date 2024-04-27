@@ -1,16 +1,18 @@
-export type EmojiVariant = {
+export interface EmojiVariant {
   name: string;
   key: string;
   emoji: string;
 }
 
-export type Emoji = {
+export type EmojiVariants = Record<string, EmojiVariant>;
+
+export interface Emoji {
   name: string;
   key: string;
   names: string[];
   emoji: string;
   category: string;
-  variants?: Record<string, EmojiVariant>;
+  variants?: EmojiVariants;
 }
 
 export const emojis: Emoji[] = [
